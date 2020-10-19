@@ -1,2 +1,2 @@
 # project
-learning JS
+today learning JS
