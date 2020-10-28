@@ -15,3 +15,41 @@
 'use strict';
 
 // Код возьмите из предыдущего домашнего задания
+
+const nubmerOfFilms = +prompt('How many films did you see', '');
+
+const personalMovieDB = {
+        count : nubmerOfFilms,
+        movies : {},
+        actors : {},
+        genres : [],
+        privat : false
+};
+
+
+
+for (let i = 0; i < 2; i++) {
+    const   a = prompt('Last seen film', ''),
+            b = prompt('Rate this film', '');
+
+    if (a != null && b != null && a !='' && b !='' && a.length < 50) {
+        personalMovieDB.movies[a] = b;
+        console.log('Done');
+    } else {
+        console.log('Error');
+        i--;
+    }       
+
+}
+
+if (personalMovieDB.count < 10) {
+    console.log("You have seen not many movies");
+} else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+    console.log("You are classic movieliker");
+} else if (personalMovieDB.count >= 30) {
+    console.log("You are a little bit crazy one, aren`t you?");
+} else {
+    console.log("Error");
+}
+console.log(personalMovieDB);
+
