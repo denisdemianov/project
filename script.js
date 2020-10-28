@@ -1,22 +1,20 @@
 "use strict";
 
-// let num = 50;
+let num = 20;
 
-// // while (num < 55) {
-// //     console.log(num);
-// //     num++;
-// // }
+function showFirstMessage(text) {
+    console.log(text);
+    let num = 10;
+    console.log(num);
+}
 
-// // do {
-// //     console.log(num);
-// //     num++;
-// // }
-// // while (num <= 55);
+showFirstMessage("Hellow World");
+console.log(num);
 
-// for (let i = 1; i < 10; i++) {
-//     if (i == 6) {
-//         // break;
-//         continue;
-//     }
-//     console.log(i);
-// }
+function calc(a, b) {
+    return(a + b);
+}
+
+console.log(calc(4, 3));
+console.log(calc(8, 1));
+console.log(calc(0, 2));
