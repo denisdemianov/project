@@ -1,40 +1,89 @@
 'use strict';
-const options = {
-    name: 'test',
-    width: 1024,
-    height: 1024,
-    colors: {
-        border: 'black',
-        bg: 'red'
-    },
-    makeTest: function() {
-        console.log("Test");
-    }
 
+// let a = 5,
+//     b = a;
+
+// b = b + 5;
+
+// console.log(b);
+// console.log(a);
+
+// const obj = {
+//     a: 5,
+//     b: 1
+// };
+
+// const copy = obj; // Не копирование объекта, а ссылка на исходный
+
+// copy.a = 10;
+
+// console.log(copy);
+// console.log(obj);
+
+function copy(mainObj) {
+    let objCopy = {};
+
+    let key;
+    for (key in mainObj) {
+        objCopy[key] = mainObj[key];
+    }
+    return objCopy;
+}
+
+const numbers = {
+    a: 2,
+    b: 5,
+    c: {
+        x:7,
+        y:4
+    }
 };
 
-options.makeTest();
+const newNumbers = copy(numbers);
 
-const {border, bg} = options.colors;
-console.log(border);
-// console.log(Object.keys(options).length);
+newNumbers.a = 10;
+newNumbers.c.x = 10;
 
-// console.log(options["colors"]["bolder"]);
+// console.log(newNumbers);
+// console.log(numbers);
 
-// // delete options.name;
+const add = {
+    d: 17,
+    e: 20
+};
 
-// // console.log(options);
-// let counter = 0;
+const clone = Object.assign({}, add);
 
-// for (let key in options) {
-//     if (typeof(options[key]) === 'object') {
-//         for (let i in options[key]) {
-//             console.log(`Свойство ${i} имет значение ${options[key][i]}`);
-//         }
-//     } else {
-//         console.log(`Свойство ${key} имет значение ${options[key]}`);
-//         counter++;
-//     }
-// }
+clone.d = 20;
 
-// console.log(counter);
+// console.log(add);
+// console.log(clone);
+
+const oldArray = ['a', 'b', 'c'];
+const newArray = oldArray.slice();
+
+newArray[1] = 'araarararara';
+console.log(newArray);
+console.log(oldArray);
+
+const video = ['youtube', 'vimeo', 'rutube'],
+        blogs = ['worldpress', 'livejournal', 'blogger'];
+        internet = [...video, ...blogs, 'vk', 'facebook'];
+
+console.log(internet);
+
+function log(a, b, c) {
+    console.log(a);
+    console.log(b);
+    console.log(c);
+}
+
+const num = [2, 5, 7];
+
+log(...num);
+
+const array = ["a", "b"];
+
+const newAr = [...array];
+
+console.log(newAr);
